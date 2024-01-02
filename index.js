@@ -47,10 +47,44 @@ window.addEventListener('resize', () => {
 
 const toggler = document.getElementById('theme-toggle');
 
+const setDarkModeState = (isDarkMode)=>{
+    localStorage.setItem('darkMode', isDarkMode)
+
+}
+
+const initilizeDarkMode = () => {
+    const savedDarkMode = localStorage.getItem('darkMode');
+    if (savedDarkMode) {
+        document.body.classList.toggle('dark', savedDarkMode === 'true');
+        toggler.checked = savedDarkMode === 'true';
+    }
+};
+
+
 toggler.addEventListener('change', function () {
     if (this.checked) {
         document.body.classList.add('dark');
+        setDarkModeState(true);
     } else {
         document.body.classList.remove('dark');
+        setDarkModeState(false);
     }
 });
+
+
+
+
+
+
+
+initilizeDarkMode();
+
+
+
+// Notification dropdown function
+function toggleNotificationDropdown() {
+    let notificationDropdown = document.getElementById("notificationDropdown");
+    notificationDropdown.style.display = (notificationDropdown.style.display === "block") ? "none" : "block";
+}
+
+

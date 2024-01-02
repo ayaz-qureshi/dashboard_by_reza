@@ -14,13 +14,13 @@
     <!-- Sidebar -->
     <div class="sidebar">
         <a href="#" class="logo">
-            <i class='bx bx-code-alt'></i>
-            <div class="logo-name"><span>Asmrtest</span>Prog</div>
+            <i class='bx bxs-shopping-bags'></i>
+            <div class="logo-name"><span>Shop</span>Now</div>
         </a>
         <ul class="side-menu">
-            <li><a href="#"><i class='bx bxs-dashboard'></i>Dashboard</a></li>
-            <li><a href="#"><i class='bx bx-store-alt'></i>Shop</a></li>
-            <li class="active"><a href="#"><i class='bx bx-analyse'></i>Analytics</a></li>
+            <li class="active"><a href="#"><i class='bx bxs-dashboard'></i>Dashboard</a></li>
+            <li><a href="/shop.html"><i class='bx bx-store-alt'></i>Shop</a></li>
+            <li ><a href="#"><i class='bx bx-analyse'></i>Analytics</a></li>
             <li><a href="#"><i class='bx bx-message-square-dots'></i>Tickets</a></li>
             <li><a href="#"><i class='bx bx-group'></i>Users</a></li>
             <li><a href="#"><i class='bx bx-cog'></i>Settings</a></li>
@@ -41,6 +41,7 @@
         <!-- Navbar -->
         <nav>
             <i class='bx bx-menu'></i>
+            <!-- To view search field please chagnge the 'form-input' class to flex from none -->
             <form action="#">
                 <div class="form-input">
                     <input type="search" placeholder="Search...">
@@ -49,10 +50,16 @@
             </form>
             <input type="checkbox" id="theme-toggle" hidden>
             <label for="theme-toggle" class="theme-toggle"></label>
-            <a href="#" class="notif">
+            <a class="notif" onclick="toggleNotificationDropdown()">
                 <i class='bx bx-bell'></i>
                 <span class="count">12</span>
             </a>
+            
+            <div class="notification-dropdown" id="notificationDropdown">
+                <!-- Notification content goes here -->
+                <p>No new notification!</p>
+            </div>
+            
             <a href="#" class="profile">
                 <img src="images/logo.png">
             </a>
@@ -60,16 +67,16 @@
 
         <!-- End of Navbar -->
 
-        <main>
+        <main name="dashboard">
             <div class="header">
                 <div class="left">
                     <h1>Dashboard</h1>
                     <ul class="breadcrumb">
                         <li><a href="#">
-                                Analytics
+                                Home
                             </a></li>
                         /
-                        <li><a href="#" class="active">Shop</a></li>
+                        <li><a href="#" class="active">Dashboard</a></li>
                     </ul>
                 </div>
                 <a href="#" class="report">

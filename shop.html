@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="style.css">
+    <title>Responsive Dashboard Design #2 | AsmrProg</title>
+</head>
+
+<body>
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <a href="#" class="logo">
+            <i class='bx bxs-shopping-bags'></i>
+            <div class="logo-name"><span>Shop</span>Now</div>
+        </a>
+        <ul class="side-menu">
+            <li><a href="/index.html"><i class='bx bxs-dashboard'></i>Dashboard</a></li>
+            <li class="active"><a href="/shop.html"><i class='bx bx-store-alt'></i>Shop</a></li>
+            <li><a href="#"><i class='bx bx-analyse'></i>Analytics</a></li>
+            <li><a href="#"><i class='bx bx-message-square-dots'></i>Tickets</a></li>
+            <li><a href="#"><i class='bx bx-group'></i>Users</a></li>
+            <li><a href="#"><i class='bx bx-cog'></i>Settings</a></li>
+        </ul>
+        <ul class="side-menu">
+            <li>
+                <a href="#" class="logout">
+                    <i class='bx bx-log-out-circle'></i>
+                    Logout
+                </a>
+            </li>
+        </ul>
+    </div>
+    <!-- End of Sidebar -->
+
+    <!-- Main Content -->
+    <div class="content">
+        <!-- Navbar -->
+        <nav>
+            <i class='bx bx-menu'></i>
+            <!-- To view search field please chagnge the form-input class to flex from none -->
+            <form action="#">
+                <div class="form-input">
+                    <input type="search" placeholder="Search...">
+                    <button class="search-btn" type="submit"><i class='bx bx-search'></i></button>
+                </div>
+            </form>
+            <input type="checkbox" id="theme-toggle" hidden>
+            <label for="theme-toggle" class="theme-toggle"></label>
+            <a class="notif" onclick="toggleNotificationDropdown()">
+                <i class='bx bx-bell'></i>
+                <span class="count">12</span>
+            </a>
+
+            <div class="notification-dropdown" id="notificationDropdown">
+                <!-- Notification content goes here -->
+                <p>No new notification!</p>
+            </div>
+
+            <a href="#" class="profile">
+                <img src="images/logo.png">
+            </a>
+        </nav>
+
+        <!-- End of Navbar -->
+
+        <main name="dashboard">
+
+            <div class="header">
+                <div class="left">
+                    <h1>Shop</h1>
+                    <ul class="breadcrumb">
+                        <li><a href="#">
+                                Home
+                            </a></li>
+                        /
+                        <li><a href="#" class="active">Shop</a></li>
+                    </ul>
+                </div>
+
+            </div>
+            <div class="bottom-data">
+                <div class="orders">
+                    <div class="header">
+                        <i class='bx bx-devices'></i>
+                        <h3>Electronics</h3>
+                        <i class='bx bx-filter'></i>
+                        <i class='bx bx-search'></i>
+                    </div>
+
+                    <div id="container" class="products">
+
+                        <div class="add" onclick="addPopUp()"><i class='bx bxs-add-to-queue'></i></div>
+
+                    </div>
+
+
+
+                </div>
+
+
+                <!-- End of Reminders-->
+
+            </div>
+            <div id="myModal" class="modal">
+                <div class="modal-content">
+                    <span class="close" onclick="closeModal()"><i class='bx bx-x'></i></span>
+                    <p>Add the new product</p>
+                    <div class="image_upload_section">
+                        <label for="imageInput" class="image_selector"><i class='bx bx-image-add'></i></label>
+                        <input type="file" id="imageInput" accept="images/*" onchange="previewImage()">
+                        <img id="imagePreview">
+                    </div>
+                    <form action="">
+                        <div class="field" >
+                            <label for="tag">Tag</label>
+                            <input type="Text" name="tag" id="tag">
+                        </div>
+                        <div class="field">
+                            <label for="title">Title</label>
+                            <input type="Text" name="title" id="title">
+                        </div>
+                        <div class="field">
+                            <label for="price">Price</label>
+                            <input type="number" name="price" id="price">
+                        </div>
+                        <button class="submit-btn" type="button" onclick="addIProduct()">Add</button>
+
+                    </form>
+                </div>
+            </div>
+        </main>
+
+    </div>
+    <script src="card.js"></script>
+    <script src="index.js"></script>
+</body>
+
+</html>
